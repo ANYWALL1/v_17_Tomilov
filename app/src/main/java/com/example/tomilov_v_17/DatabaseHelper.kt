@@ -12,6 +12,7 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         private const val DATABASE_NAME = "UserManager.db"
         private const val TABLE_USERS = "users"
         private const val COLUMN_ID = "id"
+
         private const val COLUMN_USERNAME = "username"
         private const val COLUMN_PASSWORD = "password"
     }

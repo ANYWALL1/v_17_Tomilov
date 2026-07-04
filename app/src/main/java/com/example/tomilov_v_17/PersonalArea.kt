@@ -15,10 +15,24 @@ class PersonalArea : AppCompatActivity() {
         val ivSettings = findViewById<ImageView>(R.id.iv_settings)
         val btnExit = findViewById<LinearLayout>(R.id.btn_exit)
         val tvHello = findViewById<TextView>(R.id.tv_hello)
+        val btnOnline = findViewById<LinearLayout>(R.id.btn_online)
 
         // Получаем имя пользователя из Intent (по заданию)
         val username = intent.getStringExtra("username") ?: "Гость"
-        tvHello.text = getString(R.string.hello, username)
+        val fullText = getString(R.string.hello, username)
+        val spannable = android.text.SpannableString(fullText)
+        val startIndex = fullText.indexOf(username)
+        if (startIndex != -1) {
+            val color = androidx.core.content.ContextCompat.getColor(this, R.color.yellow_main)
+            spannable.setSpan(android.text.style.ForegroundColorSpan(color), startIndex, startIndex + username.length, android.text.Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        }
+        tvHello.text = spannable
+
+        // Открытие браузера по кнопке Онлайн
+        btnOnline.setOnClickListener {
+            val browserIntent = Intent(Intent.ACTION_VIEW, android.net.Uri.parse("https://fazenda.shop"))
+            startActivity(browserIntent)
+        }
 
         // Переход со 2 экрана на 3 (PersonalArea -> Setting)
         ivSettings.setOnClickListener {

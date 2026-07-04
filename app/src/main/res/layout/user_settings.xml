@@ -19,7 +19,8 @@
             android:id="@+id/iv_back"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:src="@drawable/back" />
+            android:src="@drawable/back"
+            app:tint="@color/yellow_main" />
 
         <TextView
             android:layout_width="0dp"
@@ -35,7 +36,8 @@
             android:id="@+id/iv_exit"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:src="@drawable/exit" />
+            android:src="@drawable/exit"
+            app:tint="@color/yellow_main" />
     </LinearLayout>
 
     <LinearLayout
@@ -50,7 +52,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="180dp"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
@@ -64,9 +66,10 @@
 
             <CheckBox
                 android:id="@+id/cb_opt1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:buttonTint="@color/yellow_main"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:button="@null"
+                android:background="@drawable/custom_checkbox"
                 android:checked="true" />
         </LinearLayout>
 
@@ -87,9 +90,10 @@
 
             <CheckBox
                 android:id="@+id/cb_opt2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:buttonTint="@color/yellow_main"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:button="@null"
+                android:background="@drawable/custom_checkbox"
                 android:checked="true" />
         </LinearLayout>
 
@@ -110,9 +114,10 @@
 
             <CheckBox
                 android:id="@+id/cb_opt3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:buttonTint="@color/yellow_main"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:button="@null"
+                android:background="@drawable/custom_checkbox"
                 android:checked="false" />
         </LinearLayout>
 
@@ -135,13 +140,15 @@
             android:layout_weight="1" />
 
         <LinearLayout
+            android:id="@+id/ll_notification"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="32dp"
             android:background="@drawable/bg_bottom_chip"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:padding="16dp">
+            android:padding="16dp"
+            android:visibility="gone">
 
             <ImageView
                 android:layout_width="32dp"
@@ -151,6 +158,7 @@
                 android:src="@drawable/raketa" />
 
             <TextView
+                android:id="@+id/tv_notification"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"

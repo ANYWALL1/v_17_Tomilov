@@ -50,6 +50,10 @@ class LogIn : AppCompatActivity() {
                 val result = dbHelper.addUser(username, password)
                 if (result != -1L) {
                     Toast.makeText(this, "Пользователь зарегистрирован", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this, PersonalArea::class.java)
+                    intent.putExtra("username", username)
+                    startActivity(intent)
+                    finish()
                 } else {
                     Toast.makeText(this, "Ошибка регистрации", Toast.LENGTH_SHORT).show()
                 }
