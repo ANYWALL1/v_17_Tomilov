@@ -17,7 +17,7 @@ class PersonalArea : AppCompatActivity() {
         val tvHello = findViewById<TextView>(R.id.tv_hello)
         val btnOnline = findViewById<LinearLayout>(R.id.btn_online)
 
-        // Получаем имя пользователя из Intent (по заданию)
+        // Получаем имя пользователя
         val username = intent.getStringExtra("username") ?: "Гость"
         val fullText = getString(R.string.hello, username)
         val spannable = android.text.SpannableString(fullText)
@@ -28,19 +28,19 @@ class PersonalArea : AppCompatActivity() {
         }
         tvHello.text = spannable
 
-        // Открытие браузера по кнопке Онлайн
+        // Открытие браузера
         btnOnline.setOnClickListener {
             val browserIntent = Intent(Intent.ACTION_VIEW, android.net.Uri.parse("https://fazenda.shop"))
             startActivity(browserIntent)
         }
 
-        // Переход со 2 экрана на 3 (PersonalArea -> Setting)
+        // Переход со 2 экрана на 3
         ivSettings.setOnClickListener {
             val intent = Intent(this, Setting::class.java)
             startActivity(intent)
         }
 
-        // Переход со 2 экрана на 1 (PersonalArea -> LogIn)
+        // Переход со 2 экрана на 1
         btnExit.setOnClickListener {
             val intent = Intent(this, LogIn::class.java)
             startActivity(intent)

@@ -70,7 +70,7 @@ class LogIn : AppCompatActivity() {
             } else {
                 val userExists = dbHelper.checkUser(username, password)
                 if (userExists) {
-                    // Переход с 1 экрана на 2 (LogIn -> PersonalArea)
+                    // Переход с 1 экрана на 2
                     val intent = Intent(this, PersonalArea::class.java)
                     intent.putExtra("username", username)
                     startActivity(intent)

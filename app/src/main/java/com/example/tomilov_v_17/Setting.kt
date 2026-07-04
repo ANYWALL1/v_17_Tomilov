@@ -35,9 +35,9 @@ class Setting : AppCompatActivity() {
         cbOpt2.setOnCheckedChangeListener(listener)
         cbOpt3.setOnCheckedChangeListener(listener)
 
-        updateNotification() // Initial state
+        updateNotification()
 
-        // Переход с 3 экрана на 2 (Setting -> PersonalArea)
+        // Переход с 3 экрана на 2
         ivBack.setOnClickListener {
             val intent = Intent(this, PersonalArea::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
@@ -45,7 +45,7 @@ class Setting : AppCompatActivity() {
             finish()
         }
 
-        // Переход с 3 экрана на 1 (Setting -> LogIn)
+        // Переход с 3 экрана на 1
         ivExit.setOnClickListener {
             val intent = Intent(this, LogIn::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
